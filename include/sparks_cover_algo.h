@@ -1,7 +1,7 @@
 /**
  * @file sparks_cover_algo.h
  * @author zhdotcai (caizhehong@gddi.com.cn)
- * @brief 
+ * @brief 焊接防护面罩检测
  * @version 1.0.0
  * @date 2024-10-20
  * 

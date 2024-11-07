@@ -1,7 +1,7 @@
 /**
  * @file person_algo.h
  * @author zhdotcai (caizhehong@gddi.com.cn)
- * @brief 
+ * @brief 行人
  * @version 1.0.0
  * @date 2024-10-17
  * 

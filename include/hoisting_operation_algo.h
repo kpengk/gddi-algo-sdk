@@ -1,3 +1,14 @@
+/**
+ * @file hoisting_operation_algo.h
+ * @author zhdotcai (caizhehong@gddi.com.cn)
+ * @brief 吊装行进范围无人检测
+ * @version 1.0.0
+ * @date 2024-10-17
+ * 
+ * @copyright Copyright (c) 2024 by GDDI
+ * 
+ */
+
 #pragma once
 
 #include "struct_def.h"

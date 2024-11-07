@@ -1,7 +1,7 @@
 /**
  * @file smoke_algo.h
  * @author zhdotcai (caizhehong@gddi.com.cn)
- * @brief 
+ * @brief 抽烟检测
  * @version 1.0.0
  * @date 2024-10-17
  * 

@@ -1,7 +1,7 @@
 /**
  * @file play_phone_algo.h
  * @author zhdotcai (caizhehong@gddi.com.cn)
- * @brief 
+ * @brief 玩手机
  * @version 1.0.0
  * @date 2024-10-18
  * 

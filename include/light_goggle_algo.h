@@ -1,7 +1,7 @@
 /**
  * @file light_goggle_algo.h
  * @author zhdotcai (caizhehong@gddi.com.cn)
- * @brief 
+ * @brief 设备运行护目镜佩戴检测
  * @version 1.0.0
  * @date 2024-10-20
  * 
@@ -30,7 +30,7 @@ public:
     /**
      * @brief 加载模型
      * 
-     * @param models 行人+抽烟模型
+     * @param models 模型
      * @return true 
      * @return false 
      */

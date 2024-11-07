@@ -1,7 +1,7 @@
 /**
  * @file light_leavepost_algo.h
- * @author zhdotcai (caizhehong@gddi.com.cn)
- * @brief 
+ * @author zhousheng
+ * @brief 设备运行中离岗
  * @version 1.0.0
  * @date 2024-10-17
  * 

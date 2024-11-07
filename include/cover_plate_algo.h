@@ -1,7 +1,7 @@
 /**
  * @file cover_plate_algo.h
- * @author zhdotcai (caizhehong@gddi.com.cn)
- * @brief 
+ * @author zhousheng
+ * @brief 地坑未盖盖板检测
  * @version 1.0.0
  * @date 2024-10-17
  * 

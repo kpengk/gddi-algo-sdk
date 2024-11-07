@@ -1,7 +1,7 @@
 /**
  * @file weld_glove_algo.h
- * @author zhdotcai (caizhehong@gddi.com.cn)
- * @brief 
+ * @author zhousheng
+ * @brief 焊接佩戴手套检测
  * @version 1.0.0
  * @date 2024-10-20
  * 

@@ -1,7 +1,7 @@
 /**
  * @file door_hat_algo.h
- * @author zhdotcai (caizhehong@gddi.com.cn)
- * @brief 
+ * @author zhousheng
+ * @brief 油漆间大门关闭未戴防护帽
  * @version 1.0.0
  * @date 2024-10-20
  * 
