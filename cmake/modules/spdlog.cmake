@@ -7,7 +7,7 @@ endif()
 
 ExternalProject_Add(
     fmt_external
-    GIT_REPOSITORY http://git.mirror.gddi.io/mirror/fmt.git
+    GIT_REPOSITORY https://github.com/fmtlib/fmt.git
     GIT_TAG 10.0.0
     GIT_SHALLOW TRUE
     PREFIX ${EXTERNAL_INSTALL_LOCATION}
@@ -19,7 +19,7 @@ ExternalProject_Add(
 ExternalProject_Add(
     spdlog_external
     DEPENDS fmt_external
-    GIT_REPOSITORY http://git.mirror.gddi.io/mirror/spdlog.git
+    GIT_REPOSITORY https://github.com/gabime/spdlog.git
     GIT_TAG v1.8.5
     GIT_SHALLOW TRUE
     PREFIX ${EXTERNAL_INSTALL_LOCATION}

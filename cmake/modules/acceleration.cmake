@@ -7,6 +7,7 @@ FetchContent_Declare(
     inference-sdk
     URL ${SDK_DOWNLOAD_URL}
     URL_HASH SHA256=${SDK_URL_HASH}
+    DOWNLOAD_EXTRACT_TIMESTAMP true
 )
 
 FetchContent_MakeAvailable(inference-sdk)

@@ -38,11 +38,13 @@ endforeach(cmake_module_file)
 
 add_compile_definitions(BOOST_ALLOW_DEPRECATED_HEADERS)
 
+# lib
 file(GLOB_RECURSE SRC_FILES "${CMAKE_CURRENT_SOURCE_DIR}/src/*.c??")
 add_library(gddalgo SHARED ${SRC_FILES})
 target_link_libraries(gddalgo ${LinkLibraries})
 set_target_properties(gddalgo PROPERTIES VERSION ${PROJECT_VERSION} SOVERSION 1)
 
+# sample
 file(GLOB SAMPLE_FILES "${CMAKE_CURRENT_SOURCE_DIR}/samples/*.c??")
 foreach(file IN LISTS SAMPLE_FILES)
     get_filename_component(ProgramName ${file} NAME_WE)
@@ -50,6 +52,7 @@ foreach(file IN LISTS SAMPLE_FILES)
     target_link_libraries(${ProgramName} gddalgo ${LinkLibraries} pthread dl)
 endforeach(file)
 
+# install
 set(CMAKE_INSTALL_PREFIX "${CMAKE_SOURCE_DIR}/release")
 if(CMAKE_BUILD_TYPE STREQUAL "Release")
     install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/include/ DESTINATION ${CMAKE_INSTALL_PREFIX}/include)

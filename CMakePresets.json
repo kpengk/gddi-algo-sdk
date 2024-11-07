@@ -1,0 +1,57 @@
+{
+  "version": 4,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 19,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "aarch64_linux_bm1684x-base",
+      "hidden": true,
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/${presetName}",
+      "installDir": "${sourceDir}/install/${presetName}",
+      "cacheVariables": {
+        "CMAKE_TOOLCHAIN_FILE": "${sourceDir}/cmake//toolchains/aarch64_linux_bm1684x.toolchain"
+      },
+      "condition": {
+        "type": "equals",
+        "lhs": "${hostSystemName}",
+        "rhs": "Linux"
+      },
+      "vendor": {
+        "microsoft.com/VisualStudioRemoteSettings/CMake/1.0": {
+          "sourceDir": "$env{HOME}/xyz/$ms{projectDirName}"
+        },
+        "jetbrains.com/clion": {}
+      }
+    },
+    {
+      "name": "aarch64_linux_bm1684x-Debug",
+      "inherits": "aarch64_linux_bm1684x-base",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug"
+      }
+    },
+    {
+      "name": "aarch64_linux_bm1684x-Release",
+      "inherits": "aarch64_linux_bm1684x-base",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "Linux-Debug",
+      "configurePreset": "aarch64_linux_bm1684x-Debug",
+      "jobs": 4
+    },
+    {
+      "name": "Linux-Release",
+      "configurePreset": "aarch64_linux_bm1684x-Release",
+      "jobs": 4
+    }
+  ]
+}

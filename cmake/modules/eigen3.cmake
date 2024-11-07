@@ -5,7 +5,7 @@ if (Eigen3_FOUND)
 else()
     ExternalProject_Add(
         Eigen3_external
-        GIT_REPOSITORY http://git.mirror.gddi.io/mirror/eigen.git
+        GIT_REPOSITORY https://gitlab.com/libeigen/eigen.git
         GIT_TAG 3.4.0
         GIT_SHALLOW TRUE
         PREFIX ${EXTERNAL_INSTALL_LOCATION}
