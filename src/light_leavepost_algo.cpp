@@ -65,37 +65,30 @@ bool Light_LeavepostAlgo::sync_infer(const int64_t image_id, const cv::Mat &imag
         infer_objects = parse_infer_result(out_package->data[0]->GetMetaData<gddeploy::InferResult>(),
                                            private_->model_configs[0].threshold);
     }
-    bool flag = false;
-    for(auto &item : infer_objects)
-    {
-        if(item.label == "light_on")
-        {
-            flag =true ;
-            statistic_objects.push_back(item);
+    
+    for(auto &item : infer_objects) {
+        if(item.label == "light_on") {
+            statistic_objects.push_back(item); // 灯亮
         }
     }
-    if(flag)
-    {
-            auto in_package2 = gddeploy::Package::Create(1);
-            auto out_package2 = gddeploy::Package::Create(1);
+    if(!statistic_objects.empty()) {
+        auto in_package2 = gddeploy::Package::Create(1);
+        auto out_package2 = gddeploy::Package::Create(1);
 
-            gddeploy::BufSurfWrapperPtr surface_;
-            convertMat2BufSurface(const_cast<cv::Mat &>(image), surface_);
-            in_package2->data[0]->Set(surface_);
+        gddeploy::BufSurfWrapperPtr surface2;
+        convertMat2BufSurface(const_cast<cv::Mat &>(image), surface2);
+        in_package2->data[0]->Set(surface2);
 
-            private_->model_impls[1]->InferSync(in_package2, out_package2);
-            if (!out_package2->data.empty() && out_package2->data[0]->HasMetaValue()) {
-                infer_objects2 = parse_infer_result(out_package2->data[0]->GetMetaData<gddeploy::InferResult>(),
-                                                   private_->model_configs[1].threshold);
-            }
-            for(auto &val : infer_objects2 )
-            {
-                if(val.label =="person" )
-                {
-                    statistic_objects.push_back(val);
-                }
-
-            }
+        private_->model_impls[1]->InferSync(in_package2, out_package2);
+        if (!out_package2->data.empty() && out_package2->data[0]->HasMetaValue()) {
+            infer_objects2 = parse_infer_result(out_package2->data[0]->GetMetaData<gddeploy::InferResult>(),
+                                                private_->model_configs[1].threshold);
+        }
+        const auto iter = std::find_if(infer_objects2.cbegin(), infer_objects2.cend(), [](const auto& item){
+            return item.label == "person"; });
+        if(iter != infer_objects2.cend()) {
+            statistic_objects.clear(); // 灯亮且有人
+        }
     }
 
     return true;
